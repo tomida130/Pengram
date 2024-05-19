@@ -4,10 +4,12 @@
   <!-- フロントエンドのフレームワーク一覧 -->
   <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic">
   <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=plastic">
+  <img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=plastic">
   <!-- バックエンドのフレームワーク一覧 -->
   <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic">
   <!-- フロントエンドの言語一覧 -->
-  <img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=plastic">
+  <img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&style=plastic">
+  <img src="https://img.shields.io/badge/-Typescript-blue.svg?logo=typescript&style=plastic">
   <!-- バックエンドの言語一覧 -->
   <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic">
   <!-- データベース一覧 -->
