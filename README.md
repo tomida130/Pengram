@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic">
   <!-- フロントエンドの言語一覧 -->
   <img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&style=plastic">
-  <img src="https://img.shields.io/badge/-TypeScript-007ACC.svg?logo=typescript&style=flat">  
+<img src="https://img.shields.io/badge/-TypeScript-007ACC.svg?logo=typescript&style=flat">
   <!-- バックエンドの言語一覧 -->
   <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic">
   <!-- データベース一覧 -->
