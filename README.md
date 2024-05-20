@@ -21,5 +21,6 @@
 
 ## 内容
 絵を共有するSNS<br>
+![pengram1](https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58)
 
 
