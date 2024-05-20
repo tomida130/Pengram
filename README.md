@@ -42,6 +42,7 @@
 - アカウント設定<br>
 - 返信機能<br>
 ## ER図
+![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
 
 ## 製作期間
 約4日
