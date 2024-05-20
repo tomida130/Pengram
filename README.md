@@ -22,11 +22,8 @@
 ## 内容
 絵を共有するSNS<br>
 - 絵作成機能<br>
-<br>
 ![pengram1](https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58)
 - ダウンロード機能<br>
-<br>
 ![pengram2](https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da)
 - お気に入り登録機能<br>
-<br>
 ![pengram3](https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3)
