@@ -28,3 +28,13 @@
 ![pengram2](https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da)
 - お気に入り登録<br><br>
 ![pengram3](https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3)
+
+## 機能
+- ユーザーログイン、登録<br>
+- ユーザーパスワードの再設定<br>
+- 絵作成機能<br>
+- ダウンロード機能<br>
+- お気に入り登録機能<br>
+
+## 製作期間
+約4日
