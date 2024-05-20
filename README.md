@@ -3,6 +3,7 @@
 ## 概要
 就活用に作成したポートフォリオです<br>
 絵だけでコミュニケーションを行うSNSです<br>
+主にNext.jsとLravelを用いて作成しました<br>
 ## 使用例
 - 絵を作成<br><br>
 <img src="https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58" width="800px"><br>
