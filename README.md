@@ -6,6 +6,7 @@
 ## 使用例
 - 絵を作<br><br>
 ![pengram1](https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58)
+<img src="https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58" width="600px">
 - ダウンロード<br><br>
 ![pengram2](https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da)
 - お気に入り登録<br><br>
