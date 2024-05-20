@@ -1,4 +1,10 @@
 # Pengram
+
+## 内容
+絵だけでコミュニケーションを行うSNS<br>
+
+## なぜ作成したのか
+私は、SNSや掲示板が大好きなのですが、英語ができないので海外の人とコミュニケーションが取れません。そこで、絵を用いれば海外の人とコミュニケーションが取れるのではないかと考えました。そうして作成したのがこのPengramです。Pengramは、絵でコミュニケーションをとる新感覚SNSで、タイトル以外文字を書き込むことができません。これにより、反強制的に絵でコミュニケーションをとることを強いられるのです。
 ## 使用技術
 <p style="display: inline">
   <!-- フロントエンドのフレームワーク一覧 -->
@@ -16,11 +22,10 @@
   <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic">
 </p>
 
-## 目的
-ポートフォリオとして作成<br>
+## ER図
+![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
 
-## 内容
-絵だけでコミュニケーションを行うSNS<br>
+
 ## 使用例
 - 絵を作<br><br>
 ![pengram1](https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58)
@@ -41,8 +46,6 @@
 - 絵作成機能の拡充(消しゴム、線の大きさの調整)<br>
 - アカウント設定<br>
 - 返信機能<br>
-## ER図
-![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
 
 ## 製作期間
 約4日
