@@ -2,7 +2,7 @@
 
 ## 概要
 就活用に作成したポートフォリオです<br>
-絵だけでコミュニケーションを行うSNS<br>
+絵だけでコミュニケーションを行うSNSです<br>
 ## 使用例
 - 絵を作<br><br>
 ![pengram1](https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58)
