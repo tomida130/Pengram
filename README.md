@@ -13,6 +13,9 @@
 <img src="https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da" width="600px"><br>
 - お気に入り登録<br><br>
 <img src="https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3" width="600px"><br>
+- 自分の作品確認機能
+<img src="https://github.com/tomida130/Pengram/assets/114141852/899c9a36-5da8-4e0f-87b2-2de203da5045" width="600px"><br>
+
 
 ## なぜ作成したのか
 私は、SNSや掲示板が大好きなのですが、英語ができないので海外の人とコミュニケーションが取れません。そこで、絵を用いれば海外の人とコミュニケーションが取れるのではないかと考えました。そうして作成したのが、このPengramです。Pengramは、絵でコミュニケーションをとる新感覚SNSで、タイトル以外文字を書き込むことができません。これにより、反強制的に絵でコミュニケーションをとることを強いられるのです
