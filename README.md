@@ -36,7 +36,7 @@
 
 ### その他
 <p style="display: inline">
-<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
+<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat&logoColor=white">
 <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat">
 </p>
 
