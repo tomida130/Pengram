@@ -25,7 +25,6 @@
 
 ### フレームワーク
 <p style="display: inline">
-<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat">
 <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=flat">
 <img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat">
 <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=flat">
@@ -35,6 +34,9 @@
 
 <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat">
 
+### その他
+<img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
+<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat">
 
 ## ER図
 ![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
