@@ -59,7 +59,7 @@ const Drow = () => {
     setCurrentLine([]);
   };
 
-  const saveAsImage = async(uri) => {
+  const saveAsImage = async(uri : string) => {
     const downloadLink = document.createElement("a");
   
     if (typeof downloadLink.download === "string") {
