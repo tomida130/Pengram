@@ -7,7 +7,9 @@ import laravelAxios from '../lib/laravelAxios';
 
 const MediaCard = ({item}) => {
   const [isFavorited,setIsFavorited] = useState(false);
+
   const handleToggleFavorite = async(image,title)=>{
+    console.log(image,title)
     try{
       const response = await laravelAxios.post(`api/favorites`,{
           taitle: title,
@@ -62,13 +64,16 @@ fetchReviews()
               <Typography variant='h6' component={"div"} noWrap  textAlign={'center'}>{item.user.name}</Typography>
               
               <CardMedia 
-              alignItems="center" justify="center"
               component={"img"}
               image={item.image}
+              alt={item.taitle}
               />
                 
                 
-                <Typography variant='h5' component={"div"} noWrap textAlign={'center'}>{item.taitle}</Typography>
+                
+            </CardActionArea>
+
+            <Typography variant='h5' component={"div"} noWrap textAlign={'center'}>{item.taitle}</Typography>
                 <IconButton style={{color: isFavorited ? "red" : "white"}} onClick={()=>handleToggleFavorite(item.image,item.taitle)}>
                         <FavoriteICon sx={{stroke: isFavorited ? "red" : "black"}} />
                 </IconButton>
@@ -76,7 +81,6 @@ fetchReviews()
                 <IconButton  onClick={()=>handleSaveImage(item.image,item.taitle)}>
                         <FileDownloadIcon />
                 </IconButton>
-            </CardActionArea>
             
         </Card>
     </Grid>

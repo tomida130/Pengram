@@ -1,6 +1,6 @@
 import { Button, Grid, TextField } from "@mui/material";
 import html2canvas from "html2canvas";
-import { useState } from "react";
+import { ChangeEvent, MouseEvent, useState } from "react";
 import React from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import UploadIcon from '@mui/icons-material/Upload';
@@ -22,32 +22,32 @@ const Drow = () => {
 
   
 
-  const isButtonDisabled = (name) =>{
+  const isButtonDisabled = (name : string) =>{
     return !name;
 }
 
 
   const isReviewButtonDisabled =  isButtonDisabled(name);
 
-  const handleChangeName = (e) => {
+  const handleChangeName = (e : ChangeEvent<HTMLInputElement> ) => {
       setName(e.target.value)
   }
 
-  const handleChangeTage = (e) => {
-    setTage(e.target.value)
-}
+//   const handleChangeTage = (e) => {
+//     setTage(e.target.value)
+// }
 
 
   const [drawing, setDrawing] = useState(false);
   const [lines, setLines] = useState<Point[][]>([]);
   const [currentLine, setCurrentLine] = useState<Point[]>([]);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: MouseEvent) => {
     setDrawing(true);
     setCurrentLine([{ x: e.clientX, y: e.clientY }]);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (!drawing) return;
     setCurrentLine(currentLine => [...currentLine, { x: e.clientX, y: e.clientY }]);
   };
