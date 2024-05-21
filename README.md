@@ -30,6 +30,13 @@
 ### データーベース
 <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat">
 
+### クラウド・他
+
+<img src="https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat">
+<img src="https://img.shields.io/badge/-Google%20Cloud-EEE.svg?logo=google-cloud&style=flat">
+<img src="https://img.shields.io/badge/-Ansible-EE0000.svg?logo=ansible&style=flat">
+<img src="https://img.shields.io/badge/-GitHub-181717.svg?logo=github&style=flat">
+<img src="https://img.shields.io/badge/-Docker-EEE.svg?logo=docker&style=flat">
 
 ## ER図
 ![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
