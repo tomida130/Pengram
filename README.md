@@ -13,7 +13,7 @@
 <img src="https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da" width="600px"><br>
 - お気に入り登録<br><br>
 <img src="https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3" width="600px"><br>
-- 自分の作品確認機能
+- 自分の作品確認機能<br><br>
 <img src="https://github.com/tomida130/Pengram/assets/114141852/899c9a36-5da8-4e0f-87b2-2de203da5045" width="600px"><br>
 
 
