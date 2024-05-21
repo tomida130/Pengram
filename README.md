@@ -1,4 +1,5 @@
 # Pengram
+![pengramlog1](https://github.com/tomida130/Pengram/assets/114141852/194e56cd-4ff3-4c8c-a64a-f792e1dc6c17)
 
 ## 概要
 就活用に作成したポートフォリオです<br>
