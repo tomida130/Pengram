@@ -20,7 +20,7 @@
 <p style="display: inline">
 <img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&&style=flat">
 <img src="https://img.shields.io/badge/-TypeScript-007ACC.svg?logo=typescript&style=flat&logoColor=white">
-<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=flat">
+<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=flat&logoColor=white">
 </p>
 
 ### フレームワーク
