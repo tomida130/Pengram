@@ -17,29 +17,19 @@
 ## 使用技術
 
 ### 言語系
-<img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&style=plastic">
+<img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&&style=flat">
 <img src="https://img.shields.io/badge/-TypeScript-007ACC.svg?logo=typescript&style=flat">
-<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=plastic">
+<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=flat">
 
 ### フレームワーク
-<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic">
-<img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=plastic">
-<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=plastic">
-<img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=plastic">
+<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat">
+<img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=flat">
+<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat">
+<img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=flat">
 
 ### データーベース
-<img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=plastic">
-<!-- <p style="display: inline">
-  <!-- フロントエンドのフレームワーク一覧 -->
-  <!-- バックエンドのフレームワーク一覧 -->
-  
-  <!-- フロントエンドの言語一覧 -->
-  
-  <!-- バックエンドの言語一覧 -->
-  
-  <!-- データベース一覧 -->
-  
-</p> -->
+<img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat">
+
 
 ## ER図
 ![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
