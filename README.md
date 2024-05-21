@@ -8,11 +8,11 @@
 主にNext.jsとLravelを用いて作成しました<br>
 ## 使用例
 - 絵を作成<br><br>
-<img src="https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58" width="800px"><br>
+<img src="https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58" width="600px"><br>
 - ダウンロード<br><br>
-<img src="https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da" width="800px"><br>
+<img src="https://github.com/tomida130/Pengram/assets/114141852/865b1dff-8c68-416a-bfe2-15dfc5bbe1da" width="600px"><br>
 - お気に入り登録<br><br>
-<img src="https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3" width="800px"><br>
+<img src="https://github.com/tomida130/Pengram/assets/114141852/524f8033-f1af-498c-88d1-4647b950dfa3" width="600px"><br>
 
 ## なぜ作成したのか
 私は、SNSや掲示板が大好きなのですが、英語ができないので海外の人とコミュニケーションが取れません。そこで、絵を用いれば海外の人とコミュニケーションが取れるのではないかと考えました。そうして作成したのが、このPengramです。Pengramは、絵でコミュニケーションをとる新感覚SNSで、タイトル以外文字を書き込むことができません。これにより、反強制的に絵でコミュニケーションをとることを強いられるのです
