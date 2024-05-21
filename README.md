@@ -17,26 +17,24 @@
 ## 使用技術
 
 ### 言語系
+<p style="display: inline">
 <img src="https://img.shields.io/badge/-Javascript-blue.svg?logo=javascript&&style=flat">
 <img src="https://img.shields.io/badge/-TypeScript-007ACC.svg?logo=typescript&style=flat">
 <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=flat">
+</p>
 
 ### フレームワーク
+<p style="display: inline">
 <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat">
 <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=flat">
 <img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat">
 <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=flat">
+</p>
 
-### データーベース
+### ミドルウェア
+
 <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat">
 
-### クラウド・他
-
-<img src="https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat">
-<img src="https://img.shields.io/badge/-Google%20Cloud-EEE.svg?logo=google-cloud&style=flat">
-<img src="https://img.shields.io/badge/-Ansible-EE0000.svg?logo=ansible&style=flat">
-<img src="https://img.shields.io/badge/-GitHub-181717.svg?logo=github&style=flat">
-<img src="https://img.shields.io/badge/-Docker-EEE.svg?logo=docker&style=flat">
 
 ## ER図
 ![pengaram drawio](https://github.com/tomida130/Pengram/assets/114141852/61154c4d-10e8-400e-96af-99e93ddab5f3)
