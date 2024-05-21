@@ -32,7 +32,7 @@
 
 ### ミドルウェア
 
-<img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat">
+<img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat&logoColor=white">
 
 ### その他
 <p style="display: inline">
