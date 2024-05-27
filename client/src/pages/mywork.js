@@ -26,9 +26,9 @@ const Mywork= () => {
     var validItems = imageItems
     const loading = !imageItems && !error && !user && !error2;
 
-    if(error && error2){
+    if(error || error2){
         return <div>エラーが発生しました</div>
-    }else if (!loading && user){
+    }else if (!loading && user &&  validItems == imageItems){
         validItems = validItems.filter((item) => item.user_id ==user.id);
     }
     return (

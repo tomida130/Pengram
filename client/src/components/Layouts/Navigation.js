@@ -46,8 +46,8 @@ const Navigation = ({ user }) => {
                             </NavLink>
 
                             <NavLink
-                                href="/mylist"
-                                active={router.pathname === '/mylist'}>
+                                href="/mywork"
+                                active={router.pathname === '/mywork'}>
                                 自分の作品
                             </NavLink>
                         </div>

@@ -8,12 +8,10 @@ import laravelAxios from '../lib/laravelAxios';
 const MediaCard = ({item}) => {
   const [isFavorited,setIsFavorited] = useState(false);
 
-  const handleToggleFavorite = async(image,title)=>{
-    console.log(image,title)
+  const handleToggleFavorite = async()=>{
     try{
       const response = await laravelAxios.post(`api/favorites`,{
-          taitle: title,
-          image: image,
+          partner_id: item.id,
       })
       console.log(response.data);
       setIsFavorited(response.data.status == "added")
@@ -38,8 +36,7 @@ const MediaCard = ({item}) => {
         try{
             const favoriteResponse = await laravelAxios.get(`api/favorites/status`,{
                     params:{
-                      taitle: item.taitle,
-                      image: item.image,
+                      partner_id: item.id,
                     }
             })
 
@@ -74,7 +71,7 @@ fetchReviews()
             </CardActionArea>
 
             <Typography variant='h5' component={"div"} noWrap textAlign={'center'}>{item.taitle}</Typography>
-                <IconButton style={{color: isFavorited ? "red" : "white"}} onClick={()=>handleToggleFavorite(item.image,item.taitle)}>
+                <IconButton style={{color: isFavorited ? "red" : "white"}} onClick={()=>handleToggleFavorite()}>
                         <FavoriteICon sx={{stroke: isFavorited ? "red" : "black"}} />
                 </IconButton>
 

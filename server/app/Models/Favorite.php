@@ -13,6 +13,7 @@ class Favorite extends Model
         "taitle",
         "image",
         "user_id",
+        "partner_id",
     ];
     public function user(){
         //絵は一人のユーザーに紐づいている

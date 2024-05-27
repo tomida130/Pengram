@@ -12,12 +12,20 @@ const favorites = () => {
 
     const fetcher = (url) => laravelAxios.get(url).then((res) => res.data);
     
-    const {data: imageItems, error} = useSWR('api/favorites', fetcher);
-    console.log(imageItems)
-
-    const loading = !imageItems && !error;
-    if(error){
+    const {data: favoriteItems, error} = useSWR('api/favorites', fetcher);
+    const {data: imageItems, error2} = useSWR('api/images', fetcher);
+    
+    var validItems = []
+    const loading = !imageItems && !error && !favoriteItems && !error2;
+    if(error || error2){
         return <div>エラーが発生しました</div>
+    }else if (!loading &&  imageItems && favoriteItems){
+        validItems.fill(0);
+        favoriteItems.map((favoriteitem)=>{validItems.push(imageItems.filter((item1) =>item1.id == favoriteitem.partner_id))})
+        console.log(validItems.flat())
+        validItems = validItems.reduceRight((p, c) => [...p, c], [])
+        console.log(validItems)
+        validItems = validItems.flat()
     }
 
   return (
@@ -51,15 +59,16 @@ const favorites = () => {
 
 
                 {/* ロード中の処理 */}
+            {/* ロード中の処理 */}
             {loading ?(
                     <Grid item textAlign={"center"} xs={12}>
                         <Typography>Loading...</Typography>
                     </Grid>
                     // 絵を所得
-                ): imageItems.length > 0 ?(
+                ): validItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
-                    {imageItems.reduceRight((p, c) => [...p, c], []).map((item)=>(
-                        <MediaCard item={item} key={item.id} isContent={false}/>
+                    {validItems.map((item)=>(
+                        <MediaCard item={item} key={item.id} />
                         ))}
                     
                     </Grid>

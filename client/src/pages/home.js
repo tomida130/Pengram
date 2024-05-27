@@ -26,20 +26,7 @@ const Dashboard = () => {
         return <div>エラーが発生しました</div>
     }
 
-    // useEffect(() => {
-    //     const fetchImages = async()=>{
-    //         try {
-    //             const response = await laravelAxios.get('api/images');
-    //             // console.log(response.data.results);
-    //             setImages(response.data);
-    //             console.log(response.data);
-    //         }catch(err){
-    //             console.log(err);
-    //         }
-    //      }
-
-    //      fetchImages();
-    // }, [])
+  
     return (
         
         <AppLayout
@@ -81,7 +68,7 @@ const Dashboard = () => {
                 ): imageItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
                     {imageItems.reduceRight((p, c) => [...p, c], []).map((item)=>(
-                        <MediaCard item={item} key={item.id} isContent={false}/>
+                        <MediaCard item={item} key={item.id} />
                         ))}
                     
                     </Grid>

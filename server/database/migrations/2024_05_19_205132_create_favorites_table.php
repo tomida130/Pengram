@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->string('taitle');
-            $table->longText('image');
+            $table->integer('partner_id');
             $table->foreignId('user_id')->constrained('users')->onDelete("cascade");
-            $table->unique(['taitle', 'image', 'user_id']);
+            $table->unique(['partner_id', 'user_id']);
             $table->timestamps();
         });
     }

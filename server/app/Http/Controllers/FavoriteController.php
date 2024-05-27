@@ -14,7 +14,7 @@ class FavoriteController extends Controller
         $details = [];
 
         foreach($favorites as $favorite){
-            $details[] = array_merge(['taitle' => $favorite -> taitle, 'image' => $favorite -> image, 'user' => $favorite -> user]);
+            $details[] = array_merge(['user' => $favorite -> user, 'partner_id'=> $favorite -> partner_id ]);
         }
 
         return response()->json( $details);
@@ -23,13 +23,11 @@ class FavoriteController extends Controller
     public function toggleFavorite(Request $request){
 
         $validateData = $request->validate([
-            "taitle" => 'required|string',
-            "image" => 'required|string',
+            "partner_id" => 'required|integer',
         ]);
 
         $existingFavorite = Favorite::where('user_id', Auth::id())
-            ->where('taitle', $validateData['taitle'])
-            ->where('image', $validateData['image'])
+            ->where('partner_id', $validateData['partner_id'])
             ->first();
         
         
@@ -42,8 +40,7 @@ class FavoriteController extends Controller
         } else {
             Favorite::create([
                 'user_id' => Auth::id(),
-                'taitle' => $validateData['taitle'],
-                'image' => $validateData['image'],
+                'partner_id'=>$validateData['partner_id'],
                 
             ]);
             
@@ -54,13 +51,11 @@ class FavoriteController extends Controller
     }
     public function checkFavoriteStatus(Request $request){
         $validateData = $request->validate([
-            "taitle" => 'required|string',
-            "image" => 'required|string',
+            "partner_id" => 'required|integer',
         ]);
 
         $isFavorite = Favorite::where('user_id', Auth::id())
-        ->where('taitle', $validateData['taitle'])
-        ->where('image', $validateData['image'])
+        ->where('partner_id', $validateData['partner_id'])
         ->exists();
 
         return response()->json($isFavorite);
