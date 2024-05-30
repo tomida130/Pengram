@@ -51,8 +51,7 @@ class ImagesController extends Controller
      */
     public function show(Images $images)
     {
-        $images = Images::with('user')
-        ->get();
+        $images = Images::with('user')->latest()->get();
 
         return response()->json($images);
     }

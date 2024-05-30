@@ -71,7 +71,7 @@ const Mywork= () => {
                     // 絵を所得
                 ): validItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
-                    {validItems.reduceRight((p, c) => [...p, c], []).map((item)=>(
+                    {validItems.map((item)=>(
                         <MediaCard item={item} key={item.id} />
                         ))}
                     

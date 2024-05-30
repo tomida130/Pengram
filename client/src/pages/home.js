@@ -67,7 +67,7 @@ const Dashboard = () => {
                     // 絵を所得
                 ): imageItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
-                    {imageItems.reduceRight((p, c) => [...p, c], []).map((item)=>(
+                    {imageItems.map((item)=>(
                         <MediaCard item={item} key={item.id} />
                         ))}
                     
