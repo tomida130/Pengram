@@ -55,7 +55,7 @@ class ImagesController extends Controller
 
         return response()->json($images);
     }
-
+    
     public function mywork(Images $images)
     {
         $user_id = Auth::id();

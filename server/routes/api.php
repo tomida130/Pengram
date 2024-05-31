@@ -10,11 +10,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 //images
-Route::get('/images',[ImagesController::class, 'show']);
-Route::get('/images/mywork',[ImagesController::class, 'mywork']);
+Route::get('/images',[ImagesController::class, 'show']);//全ての作品
+Route::get('/images/mywork',[ImagesController::class, 'mywork']);// 自分の作品のみ
 Route::post('/images',[ImagesController::class, 'store']);
 
 // お気に入り
 Route::get('/favorites',[FavoriteController::class, 'index']);
 Route::post('/favorites',[FavoriteController::class, 'toggleFavorite']);
-Route::get('/favorites/status',[FavoriteController::class, 'checkFavoriteStatus']);
+Route::get('/favorites/status',[FavoriteController::class, 'checkFavoriteStatus']);//お気に入りされているかの判定

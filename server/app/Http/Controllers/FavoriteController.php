@@ -11,8 +11,8 @@ class FavoriteController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $favoritePartnerIds = $user->favorites->pluck('partner_id'); // partner_idのリストを取得
-        $details = [];
+        $favoritePartnerIds = $user->favorites->pluck('partner_id'); // partner_idのリストを取得 partner_idはお気に入りid
+        $details = [];//partner_idに対応しているimageリストを格納
         foreach ($favoritePartnerIds as $favorite) {
             $image = Images::with('user')->where('id', $favorite)->first();
             if ($image) {
