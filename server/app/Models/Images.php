@@ -19,4 +19,8 @@ class Images extends Model
         //絵は一人のユーザーに紐づいている
         return $this->belongsTo(User::class);
     }
+
+    public function favorites(){
+        return $this->hasMany(Favorite::class);
+    }
 }

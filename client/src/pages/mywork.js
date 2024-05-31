@@ -19,17 +19,12 @@ const Mywork= () => {
     const fetcher = (url) => laravelAxios.get(url).then((res) => res.data);
     
     //作成した絵を取得
-    const {data: user, error2} = useSWR('api/user', fetcher);
-    const {data: imageItems, error} = useSWR('api/images', fetcher);
+    const {data: imageItems, error} = useSWR('api/images/mywork', fetcher);
    
-    console.log(user)
-    var validItems = imageItems
-    const loading = !imageItems && !error && !user && !error2;
+    const loading = !imageItems && !error;
 
-    if(error || error2){
+    if(error){
         return <div>エラーが発生しました</div>
-    }else if (!loading && user &&  validItems == imageItems){
-        validItems = validItems.filter((item) => item.user_id ==user.id);
     }
     return (
         
@@ -69,9 +64,9 @@ const Mywork= () => {
                         <Typography>Loading...</Typography>
                     </Grid>
                     // 絵を所得
-                ): validItems.length > 0 ?(
+                ): imageItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
-                    {validItems.map((item)=>(
+                    {imageItems.map((item)=>(
                         <MediaCard item={item} key={item.id} />
                         ))}
                     

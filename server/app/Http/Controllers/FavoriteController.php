@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,14 +11,15 @@ class FavoriteController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $favorites = $user->favorites;
+        $favoritePartnerIds = $user->favorites->pluck('partner_id'); // partner_idのリストを取得
         $details = [];
-
-        foreach($favorites as $favorite){
-            $details[] = array_merge(['user' => $favorite -> user, 'partner_id'=> $favorite -> partner_id ]);
+        foreach ($favoritePartnerIds as $favorite) {
+            $image = Images::with('user')->where('id', $favorite)->first();
+            if ($image) {
+                $details[] = $image;
+            }
         }
-
-        return response()->json( $details);
+        return response()->json($details);
     }
 
     public function toggleFavorite(Request $request){

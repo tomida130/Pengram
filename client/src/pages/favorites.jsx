@@ -13,19 +13,12 @@ const favorites = () => {
     const fetcher = (url) => laravelAxios.get(url).then((res) => res.data);
     
     const {data: favoriteItems, error} = useSWR('api/favorites', fetcher);
-    const {data: imageItems, error2} = useSWR('api/images', fetcher);
+
+    console.log(favoriteItems)
     
-    var validItems = []
-    const loading = !imageItems && !error && !favoriteItems && !error2;
-    if(error || error2){
+    const loading =  !error && !favoriteItems;
+    if(error ){
         return <div>エラーが発生しました</div>
-    }else if (!loading &&  imageItems && favoriteItems){
-        validItems.fill(0);
-        favoriteItems.map((favoriteitem)=>{validItems.push(imageItems.filter((item1) =>item1.id == favoriteitem.partner_id))})
-        console.log(validItems.flat())
-        validItems = validItems.reduceRight((p, c) => [...p, c], [])
-        console.log(validItems)
-        validItems = validItems.flat()
     }
 
   return (
@@ -65,9 +58,9 @@ const favorites = () => {
                         <Typography>Loading...</Typography>
                     </Grid>
                     // 絵を所得
-                ): validItems.length > 0 ?(
+                ): favoriteItems.length > 0 ?(
                     <Grid container direction="column" alignItems="center" justify="center" spacing={3} py={3}>
-                    {validItems.map((item)=>(
+                    {favoriteItems.map((item)=>(
                         <MediaCard item={item} key={item.id} />
                         ))}
                     

@@ -56,6 +56,14 @@ class ImagesController extends Controller
         return response()->json($images);
     }
 
+    public function mywork(Images $images)
+    {
+        $user_id = Auth::id();
+        $images = Images::with('user')->where('user_id', $user_id)->latest()->get();
+
+        return response()->json($images);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

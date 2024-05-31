@@ -11,6 +11,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 //images
 Route::get('/images',[ImagesController::class, 'show']);
+Route::get('/images/mywork',[ImagesController::class, 'mywork']);
 Route::post('/images',[ImagesController::class, 'store']);
 
 // お気に入り
