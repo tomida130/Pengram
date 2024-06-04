@@ -43,6 +43,7 @@ Laravel Framework 11.4.0<br>
 
 ### その他
 <p style="display: inline">
+<img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic">
 <img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
 <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat&logoColor=white">
 </p>
@@ -65,10 +66,11 @@ Laravel Framework 11.4.0<br>
 - アカウント設定<br>
 - 返信機能<br>
 - タグ付け機能<br>
-- Dockerへ移行<br>
+
 ## 変更
 5/20 アップロード<br>
 5/21 エラーを修正<br>
 5/22 作成物確認機能追加<br>
 5/28 お気に入り機能の修正<br>
 6/01 コードを変更<br>
+6/04 XamppからDockerへ移行<br>
