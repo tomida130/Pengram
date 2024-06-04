@@ -33,7 +33,7 @@ COPY .env.example /var/www/html/.env
 
 
 
-RUN php artisan migrate
+# RUN php artisan migrate
 
 # アプリケーションキーを生成する
 RUN php artisan key:generate
