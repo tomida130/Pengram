@@ -1,6 +1,4 @@
-import ApplicationLogo from '../components/ApplicationLogo'
 import AuthCard from '../components/AuthCard'
-import AuthSessionStatus from '../components/AuthSessionStatus'
 import Button from '../components/Button'
 import GuestLayout from '../components/Layouts/GuestLayout'
 import Input from '../components/Input'
@@ -40,7 +38,7 @@ const Register = () => {
                 logo={
                     <Link href="/">
                         {/* <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" /> */}
-                        <img src='/pengramlog1.png' width={200} height={200} />
+                        <img src="/pengramlog1.png" width={200} height={200} />
                     </Link>
                 }>
                 <form onSubmit={submitForm}>

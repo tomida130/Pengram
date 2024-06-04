@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    parser: '@babel/eslint-parser',
+    parser: '@typescript-eslint/parser', // パーサーを変更
     settings: {
         react: {
             version: 'detect',
@@ -16,18 +16,21 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:prettier/recommended',
+        'plugin:@typescript-eslint/recommended',
     ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
         ecmaVersion: 2020,
-        requireConfigFile: false,
-        babelOptions: {
-            presets: ['@babel/preset-react'],
-        },
+        sourceType: 'module', // 追加
     },
-    plugins: ['react', '@next/eslint-plugin-next', 'prettier'],
+    plugins: [
+        'react',
+        '@next/eslint-plugin-next',
+        'prettier',
+        '@typescript-eslint',
+    ], // 追加
     rules: {
         'import/prefer-default-export': 0,
         'no-console': 'warn',
@@ -36,7 +39,10 @@ module.exports = {
         'no-unused-expressions': ['error', { allowTernary: true }],
         camelcase: 0,
         'react/self-closing-comp': 1,
-        'react/jsx-filename-extension': [1, { extensions: ['.js', 'jsx'] }],
+        'react/jsx-filename-extension': [
+            1,
+            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        ], // 追加
         'react/prop-types': 0,
         'react/destructuring-assignment': 0,
         'react/jsx-no-comment-textnodes': 0,

@@ -1,7 +1,6 @@
 export default function ChatMessageHeader(props) {
-
-    const name = props.name;
-    const firstNameCharacter = name.charAt(0);
+    const name = props.name
+    const firstNameCharacter = name.charAt(0)
 
     return (
         <>
@@ -10,7 +9,5 @@ export default function ChatMessageHeader(props) {
             </span>
             <small>{name} さん</small>
         </>
-
-    );
-
-};
+    )
+}

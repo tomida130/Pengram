@@ -2,7 +2,11 @@
     "arrowParens": "avoid",
     "jsxBracketSameLine": true,
     "semi": false,
+    "endOfLine": "lf",
     "singleQuote": true,
     "tabWidth": 4,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "importOrderSeparation": true,
+    "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+    "importOrderSortSpecifiers": true
 }

@@ -1,4 +1,3 @@
-import ApplicationLogo from '../../components/ApplicationLogo'
 import Dropdown from '../../components/Dropdown'
 import Link from 'next/link'
 import NavLink from '../../components/NavLink'
@@ -26,7 +25,11 @@ const Navigation = ({ user }) => {
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/home">
-                                <img src='pengramlog1.png'width={60} height={60} />
+                                <img
+                                    src="pengramlog1.png"
+                                    width={60}
+                                    height={60}
+                                />
                                 {/* <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" /> */}
                             </Link>
                         </div>
