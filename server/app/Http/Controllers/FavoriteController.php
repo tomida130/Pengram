@@ -28,6 +28,7 @@ class FavoriteController extends Controller
             "partner_id" => 'required|integer',
         ]);
 
+        $favoriteCnt = Favorite::where('partner_id', $validateData['partner_id'])->count();
         $existingFavorite = Favorite::where('user_id', Auth::id())
             ->where('partner_id', $validateData['partner_id'])
             ->first();
@@ -36,7 +37,10 @@ class FavoriteController extends Controller
         //お気に入りが存在する場合の処理
         if($existingFavorite) {
             $existingFavorite->delete();
-            return response()->json(["status" => "removed"]);
+            $favoriteCnt-=1;
+            return response()->json(["status" => "removed",
+                                     'cnt' => $favoriteCnt]);
+            
 
         //お気に入りが存在しない場合の処理
         } else {
@@ -45,8 +49,9 @@ class FavoriteController extends Controller
                 'partner_id'=>$validateData['partner_id'],
                 
             ]);
-            
-            return response()->json(["status" => "added"]);
+            $favoriteCnt+=1;
+            return response()->json(["status" => "added",
+                                    'cnt' => $favoriteCnt]);
         }
         
        
@@ -55,11 +60,13 @@ class FavoriteController extends Controller
         $validateData = $request->validate([
             "partner_id" => 'required|integer',
         ]);
+        $favoriteCnt = Favorite::where('partner_id', $validateData['partner_id'])->count();
 
         $isFavorite = Favorite::where('user_id', Auth::id())
         ->where('partner_id', $validateData['partner_id'])
         ->exists();
 
-        return response()->json($isFavorite);
+        return response()->json(['favorite' =>$isFavorite,
+                                'cnt' => $favoriteCnt]);
     }
 }

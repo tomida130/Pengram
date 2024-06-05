@@ -122,10 +122,10 @@ const Register = () => {
                         <Link
                             href="/login"
                             className="underline text-sm text-gray-600 hover:text-gray-900">
-                            Already registered?
+                            登録済み？
                         </Link>
 
-                        <Button className="ml-4">Register</Button>
+                        <Button className="ml-4">新規登録</Button>
                     </div>
                 </form>
             </AuthCard>

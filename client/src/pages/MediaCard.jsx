@@ -4,16 +4,21 @@ import {
     CardMedia,
     Grid,
     IconButton,
+    Tooltip,
     Typography,
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import FavoriteICon from '@mui/icons-material/Favorite'
 import FileDownloadIcon from '@mui/icons-material/FileDownload'
 import laravelAxios from '../lib/laravelAxios'
+import { useAuth } from '../hooks/auth'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const MediaCard = ({ item }) => {
     const [isFavorited, setIsFavorited] = useState(false)
     const [error, setError] = useState(null)
+    const [favoriteCnt, setFavoriteCnt] = useState(0)
+    const { user } = useAuth({ middleware: 'auth' })
     if (!item) {
         return null // or handle the case where item is undefined/null
     }
@@ -22,6 +27,7 @@ const MediaCard = ({ item }) => {
             const response = await laravelAxios.post(`api/favorites`, {
                 partner_id: item.id,
             })
+            setFavoriteCnt(response.data.cnt)
             setIsFavorited(response.data.status == 'added')
         } catch (err) {
             setError('エラーが発生しました')
@@ -36,6 +42,16 @@ const MediaCard = ({ item }) => {
         downloadLink.click()
         document.body.removeChild(downloadLink)
     }
+    const handleDelete = async () => {
+        if (window.confirm('レビューを削除してもよろしいですか？')) {
+            try {
+                await laravelAxios.delete(`api/image/${item.id}`)
+                location.reload()
+            } catch (err) {
+                window.confirm('エラー')
+            }
+        }
+    }
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -49,7 +65,8 @@ const MediaCard = ({ item }) => {
                     },
                 )
 
-                setIsFavorited(favoriteResponse.data)
+                setFavoriteCnt(favoriteResponse.data.cnt)
+                setIsFavorited(favoriteResponse.data.favorite)
             } catch (err) {
                 setError('エラーが発生しました')
             }
@@ -86,18 +103,47 @@ const MediaCard = ({ item }) => {
                     textAlign={'center'}>
                     {item.taitle}
                 </Typography>
-                <IconButton
-                    style={{ color: isFavorited ? 'red' : 'white' }}
-                    onClick={() => handleToggleFavorite()}>
-                    <FavoriteICon
-                        sx={{ stroke: isFavorited ? 'red' : 'black' }}
-                    />
-                </IconButton>
 
-                <IconButton
-                    onClick={() => handleSaveImage(item.image, item.taitle)}>
-                    <FileDownloadIcon />
-                </IconButton>
+                <Grid container alignItems={'center'}>
+                    <IconButton
+                        sx={{
+                            color: isFavorited ? 'red' : 'white',
+                            paddingBottom: '12px',
+                        }}
+                        onClick={() => handleToggleFavorite()}>
+                        <FavoriteICon
+                            sx={{ stroke: isFavorited ? 'red' : 'black' }}
+                        />
+                    </IconButton>
+                    <Grid item md={0.3}>
+                        {favoriteCnt > 0 ? (
+                            <Typography variant="h6">{favoriteCnt}</Typography>
+                        ) : (
+                            <Typography variant="h6" />
+                        )}
+                    </Grid>
+                    <Tooltip title="絵をダウンロード">
+                        <IconButton
+                            onClick={() =>
+                                handleSaveImage(item.image, item.taitle)
+                            }
+                            sx={{ paddingBottom: '11px' }}>
+                            <FileDownloadIcon />
+                        </IconButton>
+                    </Tooltip>
+
+                    {user?.id === item.user.id && (
+                        <>
+                            <Tooltip title="絵を削除">
+                                <IconButton
+                                    sx={{ paddingBottom: '12px' }}
+                                    onClick={() => handleDelete()}>
+                                    <DeleteIcon />
+                                </IconButton>
+                            </Tooltip>
+                        </>
+                    )}
+                </Grid>
             </Card>
         </Grid>
     )

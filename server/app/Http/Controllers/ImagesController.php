@@ -83,8 +83,12 @@ class ImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Images $images)
+    public function destroy($id)
     {
-        //
+        $image = Images::find($id);
+
+        $image->delete();
+
+        return response()->json(["message" => "正常にレビューを削除できました。"]);
     }
 }

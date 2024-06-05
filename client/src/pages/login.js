@@ -119,10 +119,10 @@ const Login = () => {
                         <Link
                             href="/forgot-password"
                             className="underline text-sm text-gray-600 hover:text-gray-900">
-                            Forgot your password?
+                            パスワードをお忘れですか？
                         </Link>
 
-                        <Button className="ml-3">Login</Button>
+                        <Button className="ml-3">ログイン</Button>
                     </div>
                 </form>
             </AuthCard>
