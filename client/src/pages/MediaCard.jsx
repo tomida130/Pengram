@@ -105,44 +105,51 @@ const MediaCard = ({ item }) => {
                 </Typography>
 
                 <Grid container alignItems={'center'}>
-                    <IconButton
-                        sx={{
-                            color: isFavorited ? 'red' : 'white',
-                            paddingBottom: '12px',
-                        }}
-                        onClick={() => handleToggleFavorite()}>
-                        <FavoriteICon
-                            sx={{ stroke: isFavorited ? 'red' : 'black' }}
-                        />
-                    </IconButton>
-                    <Grid item md={0.3}>
-                        {favoriteCnt > 0 ? (
-                            <Typography variant="h6">{favoriteCnt}</Typography>
-                        ) : (
-                            <Typography variant="h6" />
+                    <Grid item xs={4}>
+                        <Grid container alignItems={'center'}>
+                            <IconButton
+                                sx={{
+                                    color: isFavorited ? 'red' : 'white',
+                                }}
+                                onClick={() => handleToggleFavorite()}>
+                                <FavoriteICon
+                                    sx={{
+                                        stroke: isFavorited ? 'red' : 'black',
+                                    }}
+                                />
+                            </IconButton>
+
+                            {favoriteCnt > 0 ? (
+                                <Typography variant="h5">
+                                    {favoriteCnt}
+                                </Typography>
+                            ) : (
+                                <Typography variant="h5" />
+                            )}
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Tooltip title="絵をダウンロード">
+                            <IconButton
+                                onClick={() =>
+                                    handleSaveImage(item.image, item.taitle)
+                                }>
+                                <FileDownloadIcon />
+                            </IconButton>
+                        </Tooltip>
+                    </Grid>
+
+                    <Grid item xs={4}>
+                        {user?.id === item.user.id && (
+                            <>
+                                <Tooltip title="絵を削除">
+                                    <IconButton onClick={() => handleDelete()}>
+                                        <DeleteIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </>
                         )}
                     </Grid>
-                    <Tooltip title="絵をダウンロード">
-                        <IconButton
-                            onClick={() =>
-                                handleSaveImage(item.image, item.taitle)
-                            }
-                            sx={{ paddingBottom: '11px' }}>
-                            <FileDownloadIcon />
-                        </IconButton>
-                    </Tooltip>
-
-                    {user?.id === item.user.id && (
-                        <>
-                            <Tooltip title="絵を削除">
-                                <IconButton
-                                    sx={{ paddingBottom: '12px' }}
-                                    onClick={() => handleDelete()}>
-                                    <DeleteIcon />
-                                </IconButton>
-                            </Tooltip>
-                        </>
-                    )}
                 </Grid>
             </Card>
         </Grid>
