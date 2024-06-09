@@ -13,7 +13,7 @@ const favorites = () => {
 
     const loading = !error && !favoriteItems
     if (error) {
-        return <div>エラーが発生しました</div>
+        return window.confirm('エラーが発生しました')
     }
 
     return (

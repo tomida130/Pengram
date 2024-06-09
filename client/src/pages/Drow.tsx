@@ -1,4 +1,11 @@
-import { Button, Grid, TextField } from '@mui/material'
+import {
+    Button,
+    Grid,
+    TextField,
+    FormControl,
+    InputLabel,
+    Slider,
+} from '@mui/material'
 import html2canvas from 'html2canvas'
 import { ChangeEvent, MouseEvent, useState } from 'react'
 import React from 'react'
@@ -34,8 +41,14 @@ const Drow = () => {
     // }
 
     const [drawing, setDrawing] = useState(false)
-    const [lines, setLines] = useState<Point[][]>([])
+    const [lines, setLines] = useState<
+        { points: Point[]; color: string; width: number }[]
+    >([])
     const [currentLine, setCurrentLine] = useState<Point[]>([])
+
+    // 追加: 色と線の太さの状態
+    const [color, setColor] = useState('black')
+    const [lineWidth, setLineWidth] = useState(2)
 
     const handleMouseDown = (e: MouseEvent) => {
         setDrawing(true)
@@ -53,7 +66,10 @@ const Drow = () => {
     const handleMouseUp = () => {
         if (!drawing) return
         setDrawing(false)
-        setLines(lines => [...lines, currentLine])
+        setLines(lines => [
+            ...lines,
+            { points: currentLine, color: color, width: lineWidth },
+        ])
         setCurrentLine([])
     }
 
@@ -91,12 +107,15 @@ const Drow = () => {
     const saveimg = () => {
         // 画像に変換する component の id を指定
         const target = document.getElementById('target-component')
-        html2canvas(target).then(canvas => {
-            const targetImgUri = canvas.toDataURL('img/png')
-            saveAsImage(targetImgUri)
-        })
+        if (target) {
+            html2canvas(target).then(canvas => {
+                const targetImgUri = canvas.toDataURL('img/png')
+                saveAsImage(targetImgUri)
+            })
+        } else {
+            window.confirm('エラーが発生しました')
+        }
     }
-
     return (
         <div style={{ display: 'flex', height: '100vh' }}>
             <div
@@ -121,9 +140,9 @@ const Drow = () => {
                         style={{ height: '100vh' }}>
                         <polyline
                             fill="none"
-                            stroke="black"
-                            strokeWidth="2"
-                            points={line
+                            stroke={line.color} /* 追加: 線の色 */
+                            strokeWidth={line.width} /* 追加: 線の太さ */
+                            points={line.points
                                 .map(point => `${point.x},${point.y}`)
                                 .join(' ')}
                         />
@@ -135,8 +154,8 @@ const Drow = () => {
                         style={{ height: '100vh' }}>
                         <polyline
                             fill="none"
-                            stroke="black"
-                            strokeWidth="2"
+                            stroke={color} /* 追加: 線の色 */
+                            strokeWidth={lineWidth} /* 追加: 線の太さ */
                             points={currentLine
                                 .map(point => `${point.x},${point.y}`)
                                 .join(' ')}
@@ -158,6 +177,34 @@ const Drow = () => {
                     placeholder="タイトル"
                     sx={{ mb: 2, width: '80%' }}
                 />
+                <br></br>
+                {/* 追加: カラーパレット */}
+                <FormControl sx={{ mb: 2, width: '80%' }}>
+                    <InputLabel shrink>カラーパレット</InputLabel>
+                    <TextField
+                        type="color"
+                        value={color}
+                        onChange={e => setColor(e.target.value)}
+                        variant="filled"
+                        sx={{ width: '100%' }}
+                    />
+                </FormControl>
+                {/* 追加: 線の太さの選択 */}
+                <FormControl sx={{ mb: 2, width: '80%' }}>
+                    <InputLabel shrink>線の太さ</InputLabel>
+                    <Slider
+                        value={lineWidth}
+                        onChange={(_, newValue) =>
+                            setLineWidth(newValue as number)
+                        }
+                        aria-labelledby="line-width-slider"
+                        step={1}
+                        marks
+                        min={1}
+                        max={10}
+                        valueLabelDisplay="auto"
+                    />
+                </FormControl>
                 <Button
                     onClick={saveimg}
                     startIcon={<UploadIcon />}

@@ -48,7 +48,7 @@ const MediaCard = ({ item }) => {
                 await laravelAxios.delete(`api/image/${item.id}`)
                 location.reload()
             } catch (err) {
-                window.confirm('エラー')
+                setError('エラーが発生しました')
             }
         }
     }
@@ -75,11 +75,13 @@ const MediaCard = ({ item }) => {
         fetchReviews()
     }, [])
     if (error) {
-        return <div>{error}</div>
+        return window.confirm(error)
     }
     return (
         <Grid item>
-            <Card sx={{ backgroundColor: '#fef9fb', maxWidth: 600 }}>
+            <Card
+                sx={{ backgroundColor: '#fef9fb', maxWidth: 700 }}
+                variant="outlined">
                 <CardActionArea>
                     <Typography
                         variant="h6"

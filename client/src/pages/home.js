@@ -14,7 +14,7 @@ const Dashboard = () => {
     const loading = !imageItems && !error
 
     if (error) {
-        return <div>エラーが発生しました</div>
+        return window.confirm('エラーが発生しました')
     }
 
     return (
