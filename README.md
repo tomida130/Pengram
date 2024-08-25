@@ -9,6 +9,7 @@
 主にNext.jsとLravelを用いて作成しました<br>
 
 ## 使用例
+<<<<<<< HEAD
 
 - 絵を作成<br><br>
   <img src="https://github.com/tomida130/Pengram/assets/114141852/b72564d5-db64-4925-a231-af39f4a5bc58" width="600px"><br>
@@ -20,6 +21,9 @@
   <img src="https://github.com/tomida130/Pengram/assets/114141852/899c9a36-5da8-4e0f-87b2-2de203da5045" width="600px"><br>
 - いいね数表示<br><br>
   <img src="https://github.com/tomida130/Pengram/assets/114141852/b5606cea-f503-453e-8c6b-05e763859307" width="600px"><br>
+=======
+<img src="https://github.com/tomida130/Pengram/assets/114141852/7f7f3946-6716-474d-bed9-26c021f13b29" width="600px"><br>
+>>>>>>> a336072dce30d9fe93f759f73597309aee8e1c83
 
 ## なぜ作成したのか
 
@@ -68,7 +72,13 @@ PHP 8.2.12<br>
 - お気に入り登録機能<br>
 - 作成物確認機能(5/22　追加)<br>
 - 検索機能<br>
+<<<<<<< HEAD
 - 絵作成機能の拡充(消しゴム、線の大きさの調整)<br>
+=======
+- アカウント設定<br>
+- 返信機能<br>
+- タグ付け機能<br>
+>>>>>>> a336072dce30d9fe93f759f73597309aee8e1c83
 
 ## 変更
 
@@ -79,4 +89,8 @@ PHP 8.2.12<br>
 6/01 コードを変更<br>
 6/04 XamppからDockerへ移行<br>
 6/05 - いいね数表示 削除機能<br>
+<<<<<<< HEAD
 8/28 検索機能 絵作成機能の拡充<br>
+=======
+6/10 絵作成機能の拡充(消しゴム、線の大きさの調整)<br>
+>>>>>>> a336072dce30d9fe93f759f73597309aee8e1c83
