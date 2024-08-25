@@ -19,6 +19,7 @@ class FavoriteController extends Controller
                 $details[] = $image;
             }
         }
+        $details = array_reverse($details);
         return response()->json($details);
     }
 

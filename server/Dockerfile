@@ -1,8 +1,8 @@
-# ベースイメージ
-FROM php:8.2.12-fpm
+# ビルドステージ
+FROM php:8.2.12-fpm AS builder
 
 # 作業ディレクトリを設定
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 # 必要なパッケージをインストールする
 RUN apt-get update && apt-get install -y \
@@ -13,30 +13,46 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libxml2-dev \
     curl \
-    npm \
-    && docker-php-ext-install pdo_mysql zip mbstring exif pcntl bcmath gd
+    && docker-php-ext-install pdo_mysql zip mbstring exif pcntl bcmath gd opcache
 
 # Composerをインストールする
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# コンテナ内にアプリケーションをコピーする
-COPY . /var/www/html 
-
-# アプリケーションのディレクトリに移動する
-WORKDIR /var/www/html
+# composer.jsonとcomposer.lockをコピーする
+COPY composer.json composer.lock ./
 
 # Composerで依存関係をインストールする
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# .envファイルをコピーする（必要に応じて変更してください）
-COPY .env.example /var/www/html/.env
+# アプリケーションのソースコードをコピーする
+COPY . .
 
-
-
-# RUN php artisan migrate
+# .envファイルをコピーする
+COPY .env.example .env
 
 # アプリケーションキーを生成する
 RUN php artisan key:generate
+
+# 本番ステージ
+FROM php:8.2.12-fpm
+
+WORKDIR /var/www/html
+
+# 必要な PHP 拡張をインストール
+RUN docker-php-ext-install pdo_mysql opcache
+
+# ビルドステージからファイルをコピー
+COPY --from=builder /var/www/html .
+
+# PHP の設定を最適化
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+# OPcache の設定
+RUN echo 'opcache.memory_consumption=128' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
+    && echo 'opcache.interned_strings_buffer=8' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
+    && echo 'opcache.max_accelerated_files=4000' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
+    && echo 'opcache.revalidate_freq=2' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
+    && echo 'opcache.fast_shutdown=1' >> /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # ポートを公開する
 EXPOSE 8000

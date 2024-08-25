@@ -64,6 +64,21 @@ class ImagesController extends Controller
         return response()->json($images);
     }
 
+    public function search($query)
+    {
+    
+        // 型チェック
+        if (!is_string($query)) {
+            throw new \Exception('query is not string');
+        }
+    
+        // 画像の取得
+        $result = Images::with('user')->where('taitle', 'like', '%' . $query . '%')->get();
+    
+        return response()->json($result);
+    }
+    
+
     /**
      * Show the form for editing the specified resource.
      */

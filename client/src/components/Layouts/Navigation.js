@@ -39,7 +39,7 @@ const Navigation = ({ user }) => {
                             <NavLink
                                 href="/home"
                                 active={router.pathname === '/home'}>
-                                ホーム
+                                一覧
                             </NavLink>
 
                             <NavLink
@@ -124,9 +124,19 @@ const Navigation = ({ user }) => {
                 <div className="block sm:hidden">
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            href="/dashboard"
+                            href="/home"
                             active={router.pathname === '/dashboard'}>
-                            Dashboard
+                            一覧
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/favorites"
+                            active={router.pathname === '/dashboard'}>
+                            お気に入り
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/mywork"
+                            active={router.pathname === '/dashboard'}>
+                            自分の作品
                         </ResponsiveNavLink>
                     </div>
 

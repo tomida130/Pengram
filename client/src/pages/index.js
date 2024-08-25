@@ -12,7 +12,6 @@ export default function Home() {
             <Head>
                 <title>Pengram</title>
             </Head>
-
             <header>
                 <nav className="navbar navbar-expand-lg navbar-light bg-black py-4">
                     <div className="text-right px-3">
@@ -40,55 +39,54 @@ export default function Home() {
                     </div>
                 </nav>
             </header>
-
             <div
-                className="d-flex align-items-center py-8"
+                className="d-flex flex-column" // flex-columnを追加
                 style={{
                     backgroundImage: 'url(/watercolor_00685.jpg)',
-                    minHeight: 'auto',
+                    minHeight: '100vh',
                     backgroundSize: 'cover',
                     backgroundAttachment: 'fixed',
                 }}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-7 mx-auto text-center">
-                            <img
-                                src="/pengramlog1.png"
-                                className="rounded mx-auto d-block"
-                            />
-                            <Typography variant="h5" className="py-5">
-                                さあ、絵でコミュニケーションを始めよう!!
-                            </Typography>
-                            <Button variant="contained" href="/register">
-                                新規登録
-                            </Button>
-
-                            <p className="pt-10">
-                                ご意見等があれば、以下のボタンからメールにてお問い合わせください。
-                            </p>
-                            <div className="align-items-center py-3">
-                                <Button
-                                    variant="outlined"
-                                    href="mailto:Pengram@outlook.jp"
-                                    startIcon={<EmailIcon />}>
-                                    お問い合わせ
+                <div className="flex-grow-1 d-flex align-items-center justify-content-centerw-100">
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-lg-7 text-center">
+                                <img
+                                    src="/pengramlog1.png"
+                                    className="rounded mx-auto d-block img-fluid"
+                                    alt="Pengram Logo"
+                                />
+                                <Typography
+                                    variant="h5"
+                                    className="py-5 text-black">
+                                    さあ、絵でコミュニケーションを始めよう!!
+                                </Typography>
+                                <Button variant="contained" href="/register">
+                                    新規登録
                                 </Button>
+
+                                <p className="pt-4 text-black">
+                                    ご意見等があれば、以下のボタンからメールにてお問い合わせください。
+                                </p>
+                                <div className="py-3">
+                                    <Button
+                                        variant="outlined"
+                                        href="mailto:Pengram@outlook.jp"
+                                        startIcon={<EmailIcon />}>
+                                        お問い合わせ
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <footer className="bg-black ">
+            <footer className="bg-black">
                 <div className="footer-top">
-                    <div className="container">
-                        <div className="row gy-4">
-                            <div className="col-md-4 text-center">
-                                <small className="text-white ">
-                                    &copy; 2024 Pengram
-                                </small>
-                            </div>
-                        </div>
+                    <div className="col-md-4 text-center">
+                        <small className="text-white">
+                            &copy; 2024 Pengram
+                        </small>
                     </div>
                 </div>
             </footer>
