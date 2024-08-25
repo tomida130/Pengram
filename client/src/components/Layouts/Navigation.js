@@ -138,6 +138,11 @@ const Navigation = ({ user }) => {
                             active={router.pathname === '/dashboard'}>
                             自分の作品
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href="/searchpage"
+                            active={router.pathname === '/dashboard'}>
+                            検索
+                        </ResponsiveNavLink>
                     </div>
 
                     {/* Responsive Settings Options */}
