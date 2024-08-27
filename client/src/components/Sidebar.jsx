@@ -2,11 +2,9 @@ import { List, ListItemButton, ListItemText } from '@mui/material'
 import React from 'react'
 import HomeIcon from '@mui/icons-material/Home'
 import SearchIcon from '@mui/icons-material/Search'
-import LogoutIcon from '@mui/icons-material/Logout'
-import { useAuth } from '../hooks/auth'
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment'
 
 const Sidebar = () => {
-    const { logout } = useAuth()
     return (
         <List component="nav" sx={{ bgcolor: 'white' }}>
             <ListItemButton href="/">
@@ -17,9 +15,9 @@ const Sidebar = () => {
                 <SearchIcon style={{ marginRight: 8 }} />
                 <ListItemText primary="検索" />
             </ListItemButton>
-            <ListItemButton onClick={logout}>
-                <LogoutIcon style={{ marginRight: 8 }} />
-                <ListItemText primary="ログアウト" />
+            <ListItemButton href="/popularity">
+                <LocalFireDepartmentIcon style={{ marginRight: 8 }} />
+                <ListItemText primary="人気" />
             </ListItemButton>
         </List>
     )

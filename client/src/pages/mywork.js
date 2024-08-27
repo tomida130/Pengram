@@ -6,10 +6,12 @@ import useSWR from 'swr'
 import MediaCard from './MediaCard'
 import Sidebar from '../components/Sidebar'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useState } from 'react'
 
 const Mywork = () => {
     // 画面の幅が960pxより小さいかどうかをチェックす
     const isSmallScreen = useMediaQuery('(max-width:960px)')
+    const [hasError, setHasError] = useState(false)
 
     const fetcher = url => laravelAxios.get(url).then(res => res.data)
 
@@ -18,8 +20,9 @@ const Mywork = () => {
 
     const loading = !imageItems && !error
 
-    if (error) {
-        return window.confirm('エラーが発生しました')
+    if (error && !hasError) {
+        setHasError(true)
+        window.confirm('エラーが発生しました')
     }
     return (
         <AppLayout

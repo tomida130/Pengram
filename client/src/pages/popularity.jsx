@@ -1,24 +1,25 @@
 import AppLayout from '../components/Layouts/AppLayout'
-import { Box, Fab, Tooltip, Typography, Grid } from '@mui/material'
-import EditIcon from '@mui/icons-material/Edit'
-import laravelAxios from '../lib/laravelAxios'
-import useSWR from 'swr'
 import MediaCard from './MediaCard'
+import laravelAxios from '../lib/laravelAxios'
+import { Box, Fab, Grid, Tooltip, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import useSWR from 'swr'
+import EditIcon from '@mui/icons-material/Edit'
 import Sidebar from '../components/Sidebar'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { useState } from 'react'
 
-const Home = () => {
-    const fetcher = url => laravelAxios.get(url).then(res => res.data)
-    const [hasError, setHasError] = useState(false)
-    // 作成した絵を取得
-    const { data: imageItems, error } = useSWR('api/images', fetcher)
-
-    const loading = !imageItems && !error
-
-    // 画面の幅が960pxより小さいかどうかをチェックす
+const popularity = () => {
     const isSmallScreen = useMediaQuery('(max-width:960px)')
+    const [hasError, setHasError] = useState(false)
+    const fetcher = url => laravelAxios.get(url).then(res => res.data)
 
+    const { data: favoriteItems, error } = useSWR('api/favorites/sort', fetcher)
+
+    // オブジェクトを配列に変換（favoriteItemsが存在する場合のみ）
+    const favoriteItemsArray = favoriteItems ? Object.values(favoriteItems) : []
+    console.log(favoriteItemsArray)
+
+    const loading = !error && !favoriteItems
     if (error && !hasError) {
         setHasError(true)
         window.confirm('エラーが発生しました')
@@ -28,10 +29,9 @@ const Home = () => {
         <AppLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    一覧
+                    人気
                 </h2>
             }>
-            {/* Conditionally render the Tooltip only on larger screens */}
             {!isSmallScreen && (
                 <Box
                     sx={{
@@ -51,7 +51,6 @@ const Home = () => {
             )}
 
             <Grid container alignItems="flex-start">
-                {/* 大きな画面でのみサイドバーを条件付きでレンダリングする */}
                 {!isSmallScreen && (
                     <Grid
                         item
@@ -62,21 +61,18 @@ const Home = () => {
                         sx={{
                             position: 'sticky',
                             top: 0,
-                            height: 'calc(100vh - 64px)', // ヘッダーの高さを引いた値
+                            height: 'calc(100vh - 64px)',
                             overflowY: 'auto',
                         }}>
                         <Sidebar />
                     </Grid>
                 )}
-
-                {/* メインコンテンツ */}
                 <Grid item xs={12} md={isSmallScreen ? 12 : 8}>
-                    {/* ロード中の処理 */}
                     {loading ? (
                         <Grid item textAlign={'center'} xs={12}>
                             <Typography>Loading...</Typography>
                         </Grid>
-                    ) : imageItems.length > 0 ? (
+                    ) : favoriteItemsArray.length > 0 ? (
                         <Grid
                             container
                             direction="column"
@@ -84,7 +80,7 @@ const Home = () => {
                             justify="center"
                             spacing={3}
                             py={3}>
-                            {imageItems.map(item => (
+                            {favoriteItemsArray.map(item => (
                                 <MediaCard item={item} key={item.id} />
                             ))}
                         </Grid>
@@ -99,4 +95,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default popularity

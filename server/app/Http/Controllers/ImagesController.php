@@ -73,7 +73,7 @@ class ImagesController extends Controller
         }
     
         // 画像の取得
-        $result = Images::with('user')->where('taitle', 'like', '%' . $query . '%')->get();
+        $result = Images::with('user')->where('taitle', 'like', '%' . $query . '%')->latest()->get();
     
         return response()->json($result);
     }

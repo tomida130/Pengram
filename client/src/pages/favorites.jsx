@@ -2,7 +2,7 @@ import AppLayout from '../components/Layouts/AppLayout'
 import MediaCard from './MediaCard'
 import laravelAxios from '../lib/laravelAxios'
 import { Box, Fab, Grid, Tooltip, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import useSWR from 'swr'
 import EditIcon from '@mui/icons-material/Edit'
 import Sidebar from '../components/Sidebar'
@@ -11,13 +11,15 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 const favorites = () => {
     // 画面の幅が960pxより小さいかどうかをチェックす
     const isSmallScreen = useMediaQuery('(max-width:960px)')
+    const [hasError, setHasError] = useState(false)
     const fetcher = url => laravelAxios.get(url).then(res => res.data)
 
     const { data: favoriteItems, error } = useSWR('api/favorites', fetcher)
 
     const loading = !error && !favoriteItems
-    if (error) {
-        return window.confirm('エラーが発生しました')
+    if (error && !hasError) {
+        setHasError(true)
+        window.confirm('エラーが発生しました')
     }
 
     return (

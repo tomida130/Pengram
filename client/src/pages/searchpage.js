@@ -21,6 +21,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 const SearchPage = () => {
     const [query, setQuery] = useState('')
     const [trimmedQuery, settrimmedQuery] = useState('')
+    const [hasError, setHasError] = useState(false)
     // 画面の幅が960pxより小さいかどうかをチェックす
     const isSmallScreen = useMediaQuery('(max-width:960px)')
 
@@ -33,9 +34,10 @@ const SearchPage = () => {
 
     const loading = !imageItems && !error
 
-    if (error) {
+    if (error && !hasError) {
+        setHasError(true)
+        window.confirm('エラーが発生しました')
         settrimmedQuery('')
-        return console.log(error)
     }
 
     const handleChange = e => {
@@ -48,18 +50,21 @@ const SearchPage = () => {
         // クエリのトリムと空チェック
         const trimmedQuery = query.trim()
         if (!trimmedQuery) {
-            console.log('クエリが空です')
             settrimmedQuery('')
             return
         }
 
-        console.log('検索クエリ:', trimmedQuery) // クエリを出力して確認
         settrimmedQuery(trimmedQuery)
         setQuery('')
     }
 
     return (
-        <AppLayout>
+        <AppLayout
+            header={
+                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                    検索
+                </h2>
+            }>
             <Container maxWidth="md" style={{ marginTop: '50px' }}>
                 <Box
                     component={'form'}

@@ -20,3 +20,4 @@ Route::delete('/image/{image}',[ImagesController::class, 'destroy']);
 Route::get('/favorites',[FavoriteController::class, 'index']);
 Route::post('/favorites',[FavoriteController::class, 'toggleFavorite']);
 Route::get('/favorites/status',[FavoriteController::class, 'checkFavoriteStatus']);//お気に入りされているかの判定
+Route::get('/favorites/sort',[FavoriteController::class, 'getTopFavoritedSortImages']);
