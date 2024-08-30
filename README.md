@@ -10,7 +10,7 @@
 
 ## 使用例
 
-<img src="https://github.com/user-attachments/assets/fa1ad0e5-b906-4816-a53b-90afa23762bf" width="600px"><br>
+<img src="https://github.com/user-attachments/assets/13248ea3-fef8-41de-901f-c8965cee172f" width="600px"><br>
 
 ## なぜ作成したのか
 
