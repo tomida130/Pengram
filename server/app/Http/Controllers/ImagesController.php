@@ -77,6 +77,19 @@ class ImagesController extends Controller
     
         return response()->json($result);
     }
+
+    public function showId($id)
+    {
+        $image = Images::find($id);
+    
+        if (!$image) {
+            return response()->json(['error' => 'Image not found'], 404);
+        }
+
+        $image->load('user');
+    
+        return response()->json($image);
+    }
     
 
     /**

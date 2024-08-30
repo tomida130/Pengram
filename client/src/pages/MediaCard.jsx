@@ -13,15 +13,19 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload'
 import laravelAxios from '../lib/laravelAxios'
 import { useAuth } from '../hooks/auth'
 import DeleteIcon from '@mui/icons-material/Delete'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const MediaCard = ({ item }) => {
     const [isFavorited, setIsFavorited] = useState(false)
     const [error, setError] = useState(null)
     const [favoriteCnt, setFavoriteCnt] = useState(0)
     const { user } = useAuth({ middleware: 'auth' })
+
     if (!item) {
         return null // or handle the case where item is undefined/null
     }
+    const currentUrl = `https://pengram.com/status/${item.id}`
     const handleToggleFavorite = async () => {
         try {
             const response = await laravelAxios.post(`api/favorites`, {
@@ -51,6 +55,13 @@ const MediaCard = ({ item }) => {
                 setError('エラーが発生しました')
             }
         }
+    }
+
+    const shareOnTwitter = () => {
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+            currentUrl,
+        )}&text=${encodeURIComponent('おすすめの絵です|')}`
+        window.open(twitterUrl, '_blank')
     }
 
     useEffect(() => {
@@ -83,19 +94,21 @@ const MediaCard = ({ item }) => {
                 sx={{ backgroundColor: '#fef9fb', maxWidth: 700 }}
                 variant="outlined">
                 <CardActionArea>
-                    <Typography
+                    <Link href={`/status/${item.id}`}>
+                        {/* <Typography
                         variant="h6"
                         component={'div'}
                         noWrap
                         textAlign={'center'}>
                         {item.user.name}
-                    </Typography>
+                    </Typography> */}
 
-                    <CardMedia
-                        component={'img'}
-                        image={item.image}
-                        alt={item.taitle}
-                    />
+                        <CardMedia
+                            component={'img'}
+                            image={item.image}
+                            alt={item.taitle}
+                        />
+                    </Link>
                 </CardActionArea>
 
                 <Typography
@@ -107,7 +120,7 @@ const MediaCard = ({ item }) => {
                 </Typography>
 
                 <Grid container alignItems={'center'}>
-                    <Grid item xs={4}>
+                    <Grid item xs={3}>
                         <Grid container alignItems={'center'}>
                             <IconButton
                                 sx={{
@@ -130,7 +143,7 @@ const MediaCard = ({ item }) => {
                             )}
                         </Grid>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={3}>
                         <Tooltip title="絵をダウンロード">
                             <IconButton
                                 onClick={() =>
@@ -141,7 +154,20 @@ const MediaCard = ({ item }) => {
                         </Tooltip>
                     </Grid>
 
-                    <Grid item xs={4}>
+                    <Grid item xs={3}>
+                        <Tooltip title="Xに共有">
+                            <IconButton onClick={shareOnTwitter}>
+                                <Image
+                                    src="/logo-black.png"
+                                    alt="Share on Twitter"
+                                    width={20}
+                                    height={20}
+                                />
+                            </IconButton>
+                        </Tooltip>
+                    </Grid>
+
+                    <Grid item xs={3}>
                         {user?.id === item.user.id && (
                             <>
                                 <Tooltip title="絵を削除">

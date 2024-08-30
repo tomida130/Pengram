@@ -59,7 +59,7 @@ export default function Home() {
                                 <Typography
                                     variant="h5"
                                     className="py-5 text-black">
-                                    さあ、絵でコミュニケーションを始めよう!!
+                                    才能に、名前はいらない。
                                 </Typography>
                                 <Button variant="contained" href="/register">
                                     新規登録
