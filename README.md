@@ -57,6 +57,9 @@ PHP 8.2.12<br>
 
 ![pengaram drawio (1)](https://github.com/tomida130/Pengram/assets/114141852/6ba2ddff-3ea4-4c73-9b0e-ee39390197db)
 
+## インフラ構成図（予定）
+![Pengram_AWS2 drawio](https://github.com/user-attachments/assets/8b8b0a5a-140e-47e3-aff9-8e5e394f451c)
+
 ## 機能
 
 - ユーザーログイン、登録<br>
