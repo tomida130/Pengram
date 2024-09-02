@@ -18,20 +18,19 @@ RUN apt-get update && apt-get install -y \
 # Composerをインストールする
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# composer.jsonとcomposer.lockをコピーする
+# composer.jsonとcomposer.lockをコピーして、依存関係をインストール
 COPY composer.json composer.lock ./
-
-# Composerで依存関係をインストールする
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# アプリケーションのソースコードをコピーする
+# アプリケーションのソースコードと.envファイルをコピー
 COPY . .
 
-# .envファイルをコピーする
-COPY .env.example .env
+# .envファイルを設定し、アプリケーションキーを生成
+RUN cp .env.example .env \
+    && php artisan key:generate
 
-# アプリケーションキーを生成する
-RUN php artisan key:generate
+# 権限の設定（ストレージとキャッシュ）
+RUN chown -R www-data:www-data storage bootstrap/cache
 
 # 本番ステージ
 FROM php:8.2.12-fpm
@@ -53,6 +52,9 @@ RUN echo 'opcache.memory_consumption=128' >> /usr/local/etc/php/conf.d/opcache-r
     && echo 'opcache.max_accelerated_files=4000' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
     && echo 'opcache.revalidate_freq=2' >> /usr/local/etc/php/conf.d/opcache-recommended.ini \
     && echo 'opcache.fast_shutdown=1' >> /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+# 権限の設定
+RUN chown -R www-data:www-data storage bootstrap/cache
 
 # ポートを公開する
 EXPOSE 8000
