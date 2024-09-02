@@ -15,16 +15,13 @@ services:
     volumes:
       - ./server:/var/www
       - ./server/php.ini:/usr/local/etc/php/conf.d/local.ini
-
     networks:
       - app-network
     ports:
       - "8000:8000"
     depends_on:
-      mysql:
-        condition: service_healthy
-      redis:
-        condition: service_started
+      - mysql
+      - redis
 
   web:
     build:
