@@ -14,7 +14,6 @@
 
 絵を作成<br>
 <img src="https://github.com/user-attachments/assets/761f5a62-0ef5-4a7e-b775-1b646312ac56" width="600px"><br>
-![無題の動画 ‐ Clipchampで作成 (9)](https://github.com/user-attachments/assets/c1fa0e98-57c7-4073-ad95-f910311b3f82)
 作成した絵をいいね機能、人気機能、お気に入り一覧、作成リスト<br>
 <img src="https://github.com/user-attachments/assets/c1fa0e98-57c7-4073-ad95-f910311b3f82" width="600px"><br>
 検索機能も<br>
