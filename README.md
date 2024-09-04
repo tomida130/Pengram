@@ -12,6 +12,17 @@
 
 <img src="https://github.com/user-attachments/assets/13248ea3-fef8-41de-901f-c8965cee172f" width="600px"><br>
 
+絵を作成<br>
+<img src="https://github.com/user-attachments/assets/761f5a62-0ef5-4a7e-b775-1b646312ac56" width="600px"><br>
+![無題の動画 ‐ Clipchampで作成 (9)](https://github.com/user-attachments/assets/c1fa0e98-57c7-4073-ad95-f910311b3f82)
+作成した絵をいいね機能、人気機能、お気に入り一覧、作成リスト<br>
+<img src="https://github.com/user-attachments/assets/c1fa0e98-57c7-4073-ad95-f910311b3f82" width="600px"><br>
+検索機能も<br>
+<img src="https://github.com/user-attachments/assets/e105d1be-4396-4f1a-8c59-5aed321b95e1" width="600px"><br>
+スマホに対応(絵を作成する機能は対応していません)<br>
+<img src="https://github.com/user-attachments/assets/96723a60-c745-4f59-8865-f8682b808b15" width="600px"><br>
+
+
 ## なぜ作成したのか
 
 ポートフォリオ制作の理由:
