@@ -48,7 +48,6 @@ PHP 8.2.12<br>
 
 <p style="display: inline">
 <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=flat">
-<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat&logoColor=white">
 <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=flat&logoColor=white">
 
 ### ミドルウェア
