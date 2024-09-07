@@ -12,6 +12,16 @@
 
 <img src="https://github.com/user-attachments/assets/13248ea3-fef8-41de-901f-c8965cee172f" width="600px"><br>
 
+### 絵を作成<br><br>
+<img src="https://github.com/user-attachments/assets/761f5a62-0ef5-4a7e-b775-1b646312ac56" width="600px"><br>
+### 作成した絵をいいね機能、人気機能、お気に入り一覧、作成リスト<br><br>
+<img src="https://github.com/user-attachments/assets/c1fa0e98-57c7-4073-ad95-f910311b3f82" width="600px"><br>
+### 検索機能<br><br>
+<img src="https://github.com/user-attachments/assets/e105d1be-4396-4f1a-8c59-5aed321b95e1" width="600px"><br>
+### スマホに対応(絵を作成する機能は対応していません)<br><br>
+<img src="https://github.com/user-attachments/assets/96723a60-c745-4f59-8865-f8682b808b15" width="600px"><br>
+
+
 ## なぜ作成したのか
 
 ポートフォリオ制作の理由:
@@ -38,7 +48,6 @@ PHP 8.2.12<br>
 
 <p style="display: inline">
 <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=flat">
-<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=flat&logoColor=white">
 <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=laravel&style=flat&logoColor=white">
 
 ### ミドルウェア
@@ -77,10 +86,12 @@ PHP 8.2.12<br>
 - 画像を上から新しい順に表示するため、バックエンドで配列を反転させた
 - 人気順を、いいねの数で表示するのではなく。いいねが直近1週間で押された回数順に表示するようにした。
 - Laravelを用いることで簡単にSQLインジェクションを対策
+- APIをリアルタイムで呼び出し
+- スマホなどでサイトを閲覧する際、絵を作成できないようにした(タッチパネル見たいようのため)
+  
 
 ## 今後の予定
-
-- AWSへのデプロイ
+- AWSへのデプロイ(苦戦中)
 ## 変更
 
 5/20 アップロード<br>
