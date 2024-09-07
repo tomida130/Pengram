@@ -26,7 +26,7 @@ const ImageDetail = () => {
     const [error, setError] = useState(null)
     const [favoriteCnt, setFavoriteCnt] = useState(0)
     const { user } = useAuth({ middleware: 'guest' })
-    const currentUrl = `https://pengram.com${router.asPath}`
+    const currentUrl = `https://pengram.click/${router.asPath}`
 
     useEffect(() => {
         if (!imageId) return

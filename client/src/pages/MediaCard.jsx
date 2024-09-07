@@ -25,7 +25,7 @@ const MediaCard = ({ item }) => {
     if (!item) {
         return null // or handle the case where item is undefined/null
     }
-    const currentUrl = `https://pengram.com/status/${item.id}`
+    const currentUrl = `https://pengram.click/status/${item.id}`
     const handleToggleFavorite = async () => {
         try {
             const response = await laravelAxios.post(`api/favorites`, {
