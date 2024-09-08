@@ -57,6 +57,10 @@ PHP 8.2.12<br>
 
 <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=mysql&style=flat&logoColor=white">
 
+### クラウド
+<img src="https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat">
+
+
 ### その他
 
 <p style="display: inline">
