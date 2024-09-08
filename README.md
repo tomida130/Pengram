@@ -69,8 +69,9 @@ PHP 8.2.12<br>
 
 ![pengaram drawio (1)](https://github.com/tomida130/Pengram/assets/114141852/6ba2ddff-3ea4-4c73-9b0e-ee39390197db)
 
-## インフラ構成図（予定）
-![Pengram_AWS2 drawio](https://github.com/user-attachments/assets/8b8b0a5a-140e-47e3-aff9-8e5e394f451c)
+## インフラ構成図
+
+![Pengram_AWS2 drawio](https://github.com/user-attachments/assets/aeaa91d0-4951-4582-adc1-0ad1c4f1b6a8)
 
 ## 機能
 
@@ -93,8 +94,11 @@ PHP 8.2.12<br>
 - スマホなどでサイトを閲覧する際、絵を作成できないようにした(タッチパネル見たいようのため)
   
 
-## 今後の予定
-- AWSへのデプロイ(苦戦中)
+## 問題点
+- EC2がpublicに存在している（セキュリティ）
+- httpsでなくhttp
+- RDSが複数ないのでサイトが落ちたとき復旧が大変
+- EC2が1つしかないので重い
 ## 変更
 
 5/20 アップロード<br>
