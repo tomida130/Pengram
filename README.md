@@ -10,6 +10,7 @@
 [デプロイ先](http://pengram.click)<br>
 ログインメールアドレス:koudai@oit.ac.jp<br>
 ログインPass:oit19221<br>
+[認証機能が動かない場合](http://pengram.click/status/1)
 
 ## 使用例
 
