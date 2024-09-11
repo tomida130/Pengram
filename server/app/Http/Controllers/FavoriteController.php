@@ -29,13 +29,13 @@ class FavoriteController extends Controller
          // 過去1週間の日時を取得
         $oneWeekAgo = Carbon::now()->subWeek();
         // Images テーブルと Favorite テーブルを結合して、過去1週間のいいねの数でソート
-    $details = Images::select('images.*', DB::raw('COUNT(favorites.id) as favorite_count'))
-    ->leftJoin('favorites', function ($join) use ($oneWeekAgo) {$join->on('images.id', '=', 'favorites.partner_id')
-             ->where('favorites.created_at', '>=', $oneWeekAgo); // 過去1週間に絞る
-             })
-    ->groupBy('images.id') // 画像ごとにグループ化
-    ->orderBy('favorite_count', 'desc') // いいねの数が多い順にソート
-    ->get();
+        $details = Images::select('images.*', DB::raw('COUNT(favorites.id) as favorite_count'))
+        ->leftJoin('favorites', function ($join) use ($oneWeekAgo) {$join->on('images.id', '=', 'favorites.partner_id')
+                ->where('favorites.created_at', '>=', $oneWeekAgo); // 過去1週間に絞る
+                })
+        ->groupBy('images.id') // 画像ごとにグループ化
+        ->orderBy('favorite_count', 'desc') // いいねの数が多い順にソート
+        ->get();
 
 
         $details = $details->load('user')->reverse();
