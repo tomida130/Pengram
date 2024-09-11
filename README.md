@@ -81,7 +81,7 @@ PHP 8.2.12<br>
 ## 機能
 
 - ユーザーログイン、登録（Laravel Breeze）<br>
-- ユーザーパスワードの再設定（Laravel Breeze<br>
+- ユーザーパスワードの再設定（Laravel Breeze)<br>
 - 絵作成機能<br>
 - ダウンロード機能<br>
 - お気に入り登録機能<br>
@@ -105,6 +105,7 @@ PHP 8.2.12<br>
 - httpsでなくhttp
 - RDSが複数ないのでサイトが落ちたとき復旧が大変
 - EC2が1つで分散さえていないので重い
+- Laravel Breezeを日本語化
 ## 変更
 
 5/20 アップロード<br>
