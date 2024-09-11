@@ -114,6 +114,9 @@ class FavoriteControllerTest extends TestCase
         $this->assertEquals($this->image1->id, $images[0]['id']); // image1が最初に来る
         $this->assertEquals(2, $images[0]['favorite_count']);     // image1のいいね数が2
 
+        $this->assertEquals($this->image2->id, $images[2]['id']); // image3が次に来る
+        $this->assertEquals(1, $images[2]['favorite_count']);     // image3の1週間以内のいいね数が1
+
         $this->assertEquals($this->image3->id, $images[1]['id']); // image3が次に来る
         $this->assertEquals(1, $images[1]['favorite_count']);     // image3の1週間以内のいいね数が1
     }
