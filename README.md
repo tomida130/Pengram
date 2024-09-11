@@ -8,8 +8,8 @@
 絵を共有するSNSとなります<br>
 主にNext.jsとLravelを用いて作成しました<br>
 [デプロイ先](http://pengram.click)<br>
-ログインメールアドレス:koudai@oit.ac.jp<br>
-ログインPass:oit19221<br>
+ログイン用メールアドレス:koudai@oit.ac.jp<br>
+ログイン用パスワード:oit19221<br>
 [認証機能が動かない場合](http://pengram.click/status/1)
 
 ## 使用例
