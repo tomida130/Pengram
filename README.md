@@ -68,7 +68,7 @@ PHP 8.2.12<br>
 <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=plastic">
 <img src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC.svg?logo=visual-studio-code&style=flat">
 <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat&logoColor=white">
-<img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=plastic">
+<img src="https://img.shields.io/badge/-Nginx-269539.svg?logo=nginx&style=flat&logoColor=white"">
 </p>
 
 ## ER図
