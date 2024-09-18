@@ -73,11 +73,12 @@ PHP 8.2.12<br>
 
 ## ER図
 
-![pengaram drawio (1)](https://github.com/tomida130/Pengram/assets/114141852/6ba2ddff-3ea4-4c73-9b0e-ee39390197db)
+![pengaram_ER drawio](https://github.com/user-attachments/assets/852ed320-e449-423e-a53d-ab60cb0ebe94)
+
 
 ## インフラ構成図
 
-![pengaram_ER drawio](https://github.com/user-attachments/assets/d0440aa6-2a22-4baf-b640-3d686c98e9c1)
+![Pengram_AWS_filan drawio](https://github.com/user-attachments/assets/2ab4f690-556b-48c0-be1e-5cbb311440fa)
 
 ## 機能
 
