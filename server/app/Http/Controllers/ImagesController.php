@@ -71,9 +71,14 @@ class ImagesController extends Controller
         if (!is_string($query)) {
             throw new \Exception('query is not string');
         }
+
     
         // 画像の取得
-        $result = Images::with('user')->where('taitle', 'like', '%' . $query . '%')->latest()->get();
+        $result = Images::whereRaw("MATCH(taitle) AGAINST(? IN NATURAL LANGUAGE MODE)", [$query])
+        ->orWhere('taitle', 'LIKE', '%' . $query . '%')
+        ->with('user')
+        ->latest()
+        ->get();
     
         return response()->json($result);
     }
