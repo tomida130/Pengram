@@ -74,8 +74,9 @@ class ImagesController extends Controller
 
     
         // 画像の取得
+        // IN BOOLEAN MODEは検索ワードを含むか含まないかを0or1で判定
         $result = Images::whereRaw("MATCH(taitle) AGAINST(? IN NATURAL LANGUAGE MODE)", [$query])
-        ->orWhere('taitle', 'LIKE', '%' . $query . '%')
+        ->orWhere('taitle', 'LIKE', '%' . $query . '%') //含まれているリストから部分検索
         ->with('user')
         ->latest()
         ->get();
